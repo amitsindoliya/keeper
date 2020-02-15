@@ -1,6 +1,6 @@
 # keeper
 
-A new Flutter project.
+A new Flutter project for item holders
 
 ## Getting Started
 
