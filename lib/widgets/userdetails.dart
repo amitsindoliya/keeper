@@ -28,7 +28,7 @@ class UserDetails extends StatelessWidget {
               height: queryData.size.height*0.5,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: FileImage(user.userImage),
+                  image: AssetImage(user.userImage),
                 ),
               ),
             ),

@@ -30,7 +30,7 @@ class Entrieslist extends StatelessWidget {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
-                      backgroundImage: FileImage(entriesList[index].userImage),
+                      backgroundImage: AssetImage(entriesList[index].userImage),
                     ),
                     title: Text(
                       "${entriesList[index].name}",

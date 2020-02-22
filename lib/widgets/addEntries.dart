@@ -26,7 +26,7 @@ class _AddEntriesState extends State<AddEntries> {
   final nameController = TextEditingController();
 
   final itemController = TextEditingController();
-  File _userImage;
+  String _userImage;
   File localImage;
   bool _isImage = false;
 
@@ -34,13 +34,14 @@ class _AddEntriesState extends State<AddEntries> {
     File image = await ImagePicker.pickImage(source: ImageSource.camera);
     if (image == null) return;
 
-    final directory = await getApplicationDocumentsDirectory();
-    final String path = directory.path;
-    var fileName = Path.basename(image.path);
-    final File localImage = await image.copy('$path/$fileName');
+    // final directory = await getApplicationDocumentsDirectory();
+    // final String path = directory.path;
+    // var fileName = Path.basename(image.path);
+    // final File imagePath = await image.copy('$path/$fileName');
     _isImage = true;
     setState(() {
-      _userImage = image;
+      _userImage = image.path;
+      print("$image");
     });
   }
 
@@ -101,7 +102,7 @@ class _AddEntriesState extends State<AddEntries> {
                 ? GestureDetector(
                     onTap: () {},
                     child: CircleAvatar(
-                      backgroundImage: FileImage(_userImage),
+                      backgroundImage: AssetImage(_userImage),
                     ),
                   )
                 : InkWell(
